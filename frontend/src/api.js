@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = "https://stock-price-prediction-lcif.onrender.com";
 
 export async function getHistorical(ticker) {
   const res = await fetch(`${BASE_URL}/historical?ticker=${ticker}`);
