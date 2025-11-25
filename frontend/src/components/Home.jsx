@@ -62,14 +62,22 @@ export default function Home({
           >
             {/* Chart Heading */}
             <div className="mb-6">
-              <h2 className={`text-2xl font-bold mb-2 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+              <h2
+                className={`text-2xl font-bold mb-2 ${
+                  darkMode ? "text-white" : "text-gray-900"
+                }`}
+              >
                 {ticker} Stock Price Chart
               </h2>
-              <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+              <p
+                className={`text-sm ${
+                  darkMode ? "text-gray-400" : "text-gray-600"
+                }`}
+              >
                 Historical data (6 months) and predicted prices
               </p>
             </div>
-            
+
             <ChartComponent
               historical={historical}
               forecast={forecast}
@@ -107,7 +115,7 @@ export default function Home({
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
             {[
               {
-                name: "Nitai Dalal",
+                name: "Nitai Dalal (Team Leader)",
                 role: "Full Stack Developer",
                 image: "nitai.jpg",
               },
@@ -137,9 +145,16 @@ export default function Home({
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                animate={teamInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                animate={
+                  teamInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+                }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 , transition: { duration: 0.2 },border: `2px solid ${darkMode ? '#a78bfa' : '#8b5cf6'}` }}
+                whileHover={{
+                  scale: 1.05,
+                  y: -5,
+                  transition: { duration: 0.2 },
+                  border: `2px solid ${darkMode ? "#a78bfa" : "#8b5cf6"}`,
+                }}
                 className={`${
                   darkMode ? "bg-gray-800" : "bg-white"
                 } rounded-lg p-4 transition-all duration-300 shadow-md hover:shadow-xl`}
@@ -150,31 +165,36 @@ export default function Home({
                   className="w-20 h-20 rounded-full object-cover mx-auto mb-2 border-2 border-blue-500"
                 />
                 <h3
-                  className={`font-semibold text-sm ${
+                  className={`font-semibold text-sm mb-2 ${
                     darkMode ? "text-white" : "text-gray-900"
                   }`}
                 >
                   {member.name}
                 </h3>
-                <p className="text-xs text-blue-600">{member.role}</p>
+                <p
+                  className={`px-3 py-1.5 inline-block rounded-full text-sm font-medium ${
+                    darkMode
+                      ? "bg-pink-900/30 text-pink-300 border border-pink-700"
+                      : "bg-pink-100 text-pink-700 border border-pink-300"
+                  }`}
+                >
+                  {member.role}
+                </p>
               </motion.div>
             ))}
           </div>
 
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
-            to="/about"
-            className={`inline-block ${
-              darkMode
-                ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                : "bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
-            } text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300`}
-          >
-            Learn More About Our Team →
-          </Link>
+              to="/about"
+              className={`inline-block ${
+                darkMode
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                  : "bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+              } text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300`}
+            >
+              Learn More About Our Team →
+            </Link>
           </motion.div>
         </motion.div>
       </div>
